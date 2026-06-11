@@ -1,0 +1,31 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Code Reviewer AI</h1>
+
+    <div class="card">
+        <h3>Dashboard</h3>
+        <p>Welcome to Code Reviewer AI</p>
+    </div>
+
+    <button onclick="window.location.href='/review'">
+        Analyze Code
+    </button>
+
+    <button onclick="window.location.href='/history'">
+        Review History
+    </button>
+
+</div>
+
+</body>
+</html>
+```
