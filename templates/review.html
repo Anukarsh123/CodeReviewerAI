@@ -1,10 +1,10 @@
-```html
 <!DOCTYPE html>
 <html>
 <head>
     <title>Code Review</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
 
 <div class="container">
@@ -15,7 +15,10 @@
 
         <textarea
             name="code"
-            placeholder="Paste your code here..."></textarea>
+            placeholder="Paste your code here..."
+            rows="15"></textarea>
+
+        <br><br>
 
         <button type="submit">
             Analyze Code
@@ -23,8 +26,14 @@
 
     </form>
 
+    {% if result %}
+    <div class="result">
+        <h3>Analysis Result</h3>
+        <p>{{ result|safe }}</p>
+    </div>
+    {% endif %}
+
 </div>
 
 </body>
 </html>
-```
