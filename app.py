@@ -3,6 +3,26 @@ import sqlite3
 
 app = Flask(__name__)
 
+# Create users table automatically
+def create_table():
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT NOT NULL,
+        email TEXT NOT NULL,
+        password TEXT NOT NULL
+    )
+    """)
+
+    conn.commit()
+    conn.close()
+
+create_table()
+
+
 # Login Page
 @app.route("/")
 def login():
@@ -23,7 +43,7 @@ def register():
         cursor = conn.cursor()
 
         cursor.execute(
-            "INSERT INTO users(username,email,password) VALUES(?,?,?)",
+            "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
             (username, email, password)
         )
 
@@ -49,7 +69,7 @@ def review():
 
     if request.method == "POST":
 
-        code = request.form["code"]
+        code = request.form.get("code", "")
 
         if "password" in code.lower():
             result += "⚠ Hardcoded password detected.<br>"
@@ -57,7 +77,7 @@ def review():
         if "print(" in code:
             result += "ℹ Debug print statement found.<br>"
 
-        if code.count("for ") >= 2:
+        if "for" in code and code.count("for") > 1:
             result += "⚠ Nested loop detected. May affect performance.<br>"
 
         if result == "":
