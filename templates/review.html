@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Code Review</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Register - Code Reviewer AI</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
 
 <div class="container">
 
-    <h1>AI Code Reviewer</h1>
+    <h1>Create Account</h1>
 
     <form method="POST">
 
-        <textarea
-            name="code"
-            placeholder="Paste your code here..."
-            rows="15"></textarea>
+        <input type="text"
+               name="username"
+               placeholder="Username"
+               required>
 
-        <br><br>
+        <input type="email"
+               name="email"
+               placeholder="Email"
+               required>
+
+        <input type="password"
+               name="password"
+               placeholder="Password"
+               required>
 
         <button type="submit">
-            Analyze Code
+            Register
         </button>
 
     </form>
 
-    {% if result %}
-    <div class="result">
-        <h3>Analysis Result</h3>
-        <p>{{ result|safe }}</p>
-    </div>
-    {% endif %}
+    <p>
+        Already have an account?
+        <a href="/">Login</a>
+    </p>
 
 </div>
 
