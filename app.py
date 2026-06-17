@@ -8,6 +8,7 @@ app = Flask(__name__)
 def login():
     return render_template("login.html")
 
+
 # Register Page
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -41,9 +42,28 @@ def dashboard():
 
 
 # Review Page
-@app.route("/review")
+@app.route("/review", methods=["GET", "POST"])
 def review():
-    return render_template("review.html")
+
+    result = ""
+
+    if request.method == "POST":
+
+        code = request.form["code"]
+
+        if "password" in code.lower():
+            result += "⚠ Hardcoded password detected.<br>"
+
+        if "print(" in code:
+            result += "ℹ Debug print statement found.<br>"
+
+        if code.count("for ") >= 2:
+            result += "⚠ Nested loop detected. May affect performance.<br>"
+
+        if result == "":
+            result = "✅ No major issues found."
+
+    return render_template("review.html", result=result)
 
 
 # History Page
