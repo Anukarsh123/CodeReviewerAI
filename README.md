@@ -1,57 +1,38 @@
-# Code Reviewer AI
+# AI Code Reviewer
 
-## Overview
-
-Code Reviewer AI is a web-based application developed using Flask and SQLite that helps developers review, organize, and manage source code submissions through a simple and intuitive interface.
-
-The project provides user authentication, a centralized dashboard, code review functionality, and review history management. It is designed as a foundation for integrating advanced AI-powered code analysis in future versions.
+A web-based AI Code Reviewer built using **Flask, SQLite, HTML, CSS, and JavaScript**.  
+It allows users to submit source code, receive reviews, and track past analysis results through a simple and responsive interface.
 
 ---
 
-## Features
+## 🔗 Live Demo
 
-### User Management
-
-* User Registration
-* User Login
-* Secure Authentication Workflow
-* Personalized Dashboard
-
-### Code Review
-
-* Submit Source Code for Review
-* Analyze Code Through Web Interface
-* Review Results Display
-
-### History Management
-
-* Store Previous Reviews
-* Access Historical Review Records
-* Organized User Experience
-
-### User Interface
-
-* Modern Dark Theme
-* Responsive Design
-* Clean Navigation
-* Professional Layout
+👉 https://codereviewerai-2.onrender.com
 
 ---
 
-## Technology Stack
+## 🚀 Features
 
-| Technology | Purpose                 |
-| ---------- | ----------------------- |
-| Python     | Backend Development     |
-| Flask      | Web Framework           |
-| SQLite     | Database Management     |
-| HTML5      | Frontend Structure      |
-| CSS3       | Styling and Layout      |
-| JavaScript | Client-side Interaction |
+- User Registration and Login system
+- Secure authentication workflow
+- Code submission for review
+- Review results display
+- Review history tracking
+- Responsive and modern UI design
+- SQLite database integration
 
 ---
 
-## Project Structure
+## 🛠 Tech Stack
+
+- **Backend:** Python (Flask)
+- **Database:** SQLite
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Framework:** Flask
+
+---
+
+## 📁 Project Structure
 
 ```text
 CodeReviewerAI/
@@ -75,93 +56,3 @@ CodeReviewerAI/
 │   └── js/
 │
 └── uploads/
-```
-
----
-
-## Installation
-
-### Clone Repository
-
-```bash
-git clone https://github.com/your-username/CodeReviewerAI.git
-cd CodeReviewerAI
-```
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Create Database
-
-```bash
-python database.py
-```
-
-### Run Application
-
-```bash
-python app.py
-```
-
-### Open Browser
-
-```text
-http://127.0.0.1:5000
-```
-
----
-
-## Screenshots
-
-Add screenshots of:
-
-* Login Page
-* Registration Page
-* Dashboard
-* Code Review Interface
-* Review History Page
-
----
-
-## Future Enhancements
-
-* AI-Based Code Analysis
-* Security Vulnerability Detection
-* Code Quality Scoring
-* File Upload Support
-* PDF Report Generation
-* User Session Management
-* Password Hashing
-* Advanced Dashboard Analytics
-
----
-
-## Learning Outcomes
-
-This project demonstrates practical implementation of:
-
-* Web Application Development
-* Database Integration
-* User Authentication
-* Flask Routing
-* Frontend and Backend Integration
-* Software Project Organization
-
----
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-## Author
-
-**Anukarsh C**
-
-B.Tech Student | Software Development Enthusiast
-
-Feel free to contribute, fork, and improve this project.
